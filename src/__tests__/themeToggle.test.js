@@ -60,6 +60,11 @@ describe('initThemeToggle', () => {
     expect(document.documentElement.getAttribute('data-bs-theme')).toBe('light');
   });
 
+  test('does not persist to localStorage on init when no preference is saved', () => {
+    initThemeToggle();
+    expect(localStorage.getItem('theme')).toBeNull();
+  });
+
   test('persists theme choice to localStorage', () => {
     localStorage.setItem('theme', 'light');
     initThemeToggle();

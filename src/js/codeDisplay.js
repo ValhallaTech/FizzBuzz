@@ -62,6 +62,11 @@ export function initCodeDisplay() {
       e.preventDefault();
       const language = tab.getAttribute('data-language');
 
+      if (!language || !CODE_EXAMPLES[language]) {
+        console.warn('Tab has invalid or missing data-language:', language);
+        return;
+      }
+
       languageTabs.forEach((t) => {
         t.classList.remove('active');
         t.setAttribute('aria-selected', 'false');
@@ -118,7 +123,15 @@ export function copyCode(language) {
     return;
   }
 
-  navigator.clipboard
+  if (!navigator.clipboard?.writeText) {
+    console.error('Clipboard API not available');
+    if (window.showError) {
+      window.showError('Clipboard not available in this context.');
+    }
+    return;
+  }
+
+  return navigator.clipboard
     .writeText(example.code)
     .then(() => {
       if (window.showSuccess) {

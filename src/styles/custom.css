@@ -284,7 +284,7 @@
    TOAST NOTIFICATIONS
    ============================================ */
 
-.toast-container {
+.fb-toast-container {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
@@ -294,7 +294,7 @@
   gap: 0.5rem;
 }
 
-.toast {
+.fb-toast {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -310,16 +310,16 @@
   pointer-events: none;
 }
 
-.toast.show {
+.fb-toast.show {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-.toast-success { background-color: #198754; }
-.toast-error   { background-color: #dc3545; }
-.toast-info    { background-color: #0d6efd; }
-.toast-warning { background-color: #fd7e14; }
+.fb-toast-success { background-color: #198754; }
+.fb-toast-error   { background-color: #dc3545; }
+.fb-toast-info    { background-color: #0d6efd; }
+.fb-toast-warning { background-color: #fd7e14; }
 
 /* ============================================
    ACCESSIBILITY

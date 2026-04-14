@@ -18,7 +18,7 @@ export function initThemeToggle() {
   }
 
   const savedTheme = getSavedOrPreferredTheme();
-  setTheme(savedTheme, false);
+  applyTheme(savedTheme, false);
 
   toggle.addEventListener('click', () => {
     const currentTheme = html.getAttribute('data-bs-theme');
@@ -29,7 +29,7 @@ export function initThemeToggle() {
   const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
   darkModeMediaQuery.addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
-      setTheme(e.matches ? 'dark' : 'light', true);
+      applyTheme(e.matches ? 'dark' : 'light', true);
     }
   });
 
@@ -44,12 +44,11 @@ export function initThemeToggle() {
     return 'light';
   }
 
-  function setTheme(theme, animate = true) {
+  function applyTheme(theme, animate = true) {
     if (animate) {
       document.body.classList.add('theme-transitioning');
     }
     html.setAttribute('data-bs-theme', theme);
-    localStorage.setItem('theme', theme);
     updateToggleButton(theme);
     window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme, isDark: theme === 'dark' } }));
     if (animate) {
@@ -57,6 +56,11 @@ export function initThemeToggle() {
         document.body.classList.remove('theme-transitioning');
       }, 300);
     }
+  }
+
+  function setTheme(theme, animate = true) {
+    applyTheme(theme, animate);
+    localStorage.setItem('theme', theme);
   }
 
   function updateToggleButton(theme) {

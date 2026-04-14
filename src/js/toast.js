@@ -13,12 +13,15 @@ export function showToast(message, type = 'info', duration = 3000) {
   if (!container) {
     container = document.createElement('div');
     container.id = 'toast-container';
-    container.className = 'toast-container';
+    container.className = 'fb-toast-container';
+    container.setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
+    container.setAttribute('aria-atomic', 'true');
     document.body.appendChild(container);
   }
 
   const toast = document.createElement('div');
-  toast.className = `toast toast-${type}`;
+  toast.className = `fb-toast fb-toast-${type}`;
+  toast.setAttribute('role', type === 'error' ? 'alert' : 'status');
 
   const icons = {
     success: 'fa-circle-check',

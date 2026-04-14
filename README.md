@@ -111,11 +111,13 @@ FizzBuzz/
 ├── netlify.toml                # Netlify configuration
 ├── package.json                # Dependencies and scripts
 ├── .nvmrc                      # Node version (22.20.0)
-├── .eslintrc.json              # ESLint configuration
+├── eslint.config.mjs           # ESLint flat configuration
 ├── .prettierrc                 # Prettier configuration
 ├── babel.config.json           # Babel (for Jest)
 └── jest.config.json            # Jest configuration
 ```
+
+> **Note on legacy files:** The repository also contains the original ASP.NET WebForms project (`FizzBuzz.sln`, `FizzBuzz.csproj`, `Web.config`, and root-level `index.html`/`Solve.html`/`Code.html`). These are preserved for reference. The authoritative source is the `src/` directory — all development, building, and deployment work should be performed there.
 
 ## Deploy to Netlify
 
