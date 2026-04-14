@@ -5,10 +5,10 @@
   "labels": ["dependencies"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["*"],
       "groupName": "all dependencies",
       "automerge": true,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "matchPackageNames": ["*"]
     }
   ],
   "enabledManagers": ["npm"],
