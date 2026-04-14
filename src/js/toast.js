@@ -14,10 +14,11 @@ export function showToast(message, type = 'info', duration = 3000) {
     container = document.createElement('div');
     container.id = 'toast-container';
     container.className = 'fb-toast-container';
-    container.setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
     container.setAttribute('aria-atomic', 'true');
     document.body.appendChild(container);
   }
+  // Update aria-live on every toast so errors always get 'assertive'
+  container.setAttribute('aria-live', type === 'error' ? 'assertive' : 'polite');
 
   const toast = document.createElement('div');
   toast.className = `fb-toast fb-toast-${type}`;

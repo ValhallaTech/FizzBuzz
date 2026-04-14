@@ -46,8 +46,10 @@ describe('showToast', () => {
     expect(document.getElementById('toast-container').getAttribute('aria-live')).toBe('polite');
   });
 
-  test('container has aria-live="assertive" for error type', () => {
-    showToast('Error message', 'error');
+  test('updates aria-live to "assertive" when an error toast is added to an existing container', () => {
+    showToast('Info first', 'info');
+    expect(document.getElementById('toast-container').getAttribute('aria-live')).toBe('polite');
+    showToast('Error next', 'error');
     expect(document.getElementById('toast-container').getAttribute('aria-live')).toBe('assertive');
   });
 
