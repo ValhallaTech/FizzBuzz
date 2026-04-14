@@ -1,0 +1,361 @@
+/* ============================================
+   FIZZBUZZ - CUSTOM STYLES
+   Modern CSS with Custom Properties
+   ============================================ */
+
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+
+:root[data-bs-theme='light'],
+:root {
+  /* FizzBuzz badge colours */
+  --fizz-bg: #0d6efd;
+  --fizz-color: #fff;
+  --buzz-bg: #198754;
+  --buzz-color: #fff;
+  --fizzbuzz-bg: #fd7e14;
+  --fizzbuzz-color: #fff;
+  --number-bg: #e9ecef;
+  --number-color: #495057;
+
+  /* Layout */
+  --controls-bg: #fff;
+  --results-bg: #fff;
+  --legend-bg: #f8f9fa;
+  --stats-bar-bg: #f8f9fa;
+  --tech-card-bg: #f8f9fa;
+
+  /* Transitions */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+:root[data-bs-theme='dark'] {
+  --controls-bg: #2b2d31;
+  --results-bg: #2b2d31;
+  --legend-bg: #1e2023;
+  --stats-bar-bg: #1e2023;
+  --tech-card-bg: #2b2d31;
+  --number-bg: #495057;
+  --number-color: #dee2e6;
+}
+
+/* ============================================
+   THEME TRANSITION
+   ============================================ */
+
+.theme-transitioning,
+.theme-transitioning * {
+  transition: var(--theme-transition) !important;
+}
+
+/* ============================================
+   SKIP LINK
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--bs-primary);
+  color: #fff;
+  border-radius: 0 0 0.375rem 0.375rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================
+   FEATURE LIST
+   ============================================ */
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--bs-border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-list li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+   TECH STACK CARDS
+   ============================================ */
+
+.tech-card {
+  background: var(--tech-card-bg);
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.tech-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================
+   FIZZBUZZ BADGE COLOURS
+   ============================================ */
+
+.fizz-badge {
+  background-color: var(--fizz-bg) !important;
+  color: var(--fizz-color) !important;
+}
+
+.buzz-badge {
+  background-color: var(--buzz-bg) !important;
+  color: var(--buzz-color) !important;
+}
+
+.fizzbuzz-badge {
+  background-color: var(--fizzbuzz-bg) !important;
+  color: var(--fizzbuzz-color) !important;
+}
+
+.number-badge {
+  background-color: var(--number-bg) !important;
+  color: var(--number-color) !important;
+}
+
+/* ============================================
+   SOLVE PAGE
+   ============================================ */
+
+.controls-card {
+  background: var(--controls-bg);
+  border: 1px solid var(--bs-border-color);
+}
+
+.legend-bar {
+  background: var(--legend-bg);
+  border: 1px solid var(--bs-border-color);
+  font-size: 0.9rem;
+}
+
+.stats-bar {
+  background: var(--stats-bar-bg);
+  border: 1px solid var(--bs-border-color);
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.results-wrapper {
+  background: var(--results-bg);
+  border: 1px solid var(--bs-border-color);
+  min-height: 120px;
+}
+
+/* Badge grid for the sequence output */
+.results-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.result-badge {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.5rem;
+  cursor: default;
+  user-select: none;
+  border-radius: 0.375rem;
+  transition: transform 0.1s ease;
+}
+
+.result-badge:hover {
+  transform: scale(1.1);
+}
+
+/* ============================================
+   CODE PAGE
+   ============================================ */
+
+.explanation-card,
+.example-card {
+  border: 1px solid var(--bs-border-color);
+}
+
+.complexity-badge {
+  border: 1px solid var(--bs-border-color);
+}
+
+/* Language selector tabs */
+.language-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lang-tab {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.375rem 0.375rem 0 0;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.lang-tab:hover {
+  background: var(--bs-secondary-bg);
+}
+
+.lang-tab.active {
+  background: var(--bs-primary);
+  color: #fff;
+  border-color: var(--bs-primary);
+}
+
+/* Prism code container */
+.code-container {
+  overflow-x: auto;
+}
+
+.code-container pre {
+  margin: 0;
+  border-radius: 0.375rem;
+}
+
+.code-card {
+  border: 1px solid var(--bs-border-color);
+}
+
+.resource-card {
+  transition: box-shadow 0.2s ease;
+}
+
+.resource-card:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  margin-top: auto;
+}
+
+.footer a:hover {
+  opacity: 0.8;
+}
+
+/* ============================================
+   TOAST NOTIFICATIONS
+   ============================================ */
+
+.fb-toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fb-toast {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 340px;
+  pointer-events: none;
+}
+
+.fb-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.fb-toast-success { background-color: #198754; }
+.fb-toast-error   { background-color: #dc3545; }
+.fb-toast-info    { background-color: #0d6efd; }
+.fb-toast-warning { background-color: #fd7e14; }
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 576px) {
+  .hero-section {
+    min-height: auto;
+  }
+
+  .fb-toast-container {
+    bottom: 1rem;
+    right: 0.75rem;
+    left: 0.75rem;
+  }
+
+  .fb-toast {
+    max-width: 100%;
+  }
+}

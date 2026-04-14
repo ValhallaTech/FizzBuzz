@@ -1,0 +1,28 @@
+# FizzBuzz - Python
+#
+# Time Complexity:  O(n) - single pass from 1 to limit
+# Space Complexity: O(n) - result list of n items
+
+
+def fizz_buzz(fizz: int = 3, buzz: int = 5, limit: int = 100) -> list[str]:
+    results: list[str] = []
+
+    for i in range(1, limit + 1):
+        is_fizz = i % fizz == 0
+        is_buzz = i % buzz == 0
+
+        if is_fizz and is_buzz:
+            results.append("FizzBuzz")
+        elif is_fizz:
+            results.append("Fizz")
+        elif is_buzz:
+            results.append("Buzz")
+        else:
+            results.append(str(i))
+
+    return results
+
+
+# Run with classic defaults (3, 5, 1–100)
+sequence = fizz_buzz()
+print(", ".join(sequence))
