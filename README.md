@@ -31,32 +31,32 @@ This project extends the classic by letting you configure both divisors and the 
 ```bash
 git clone https://github.com/ValhallaTech/FizzBuzz.git
 cd FizzBuzz
-npm install
+yarn install
 ```
 
 ### Development
 
 ```bash
-npm run dev       # Start dev server → http://localhost:1234
+yarn dev          # Start dev server → http://localhost:1234
 ```
 
 ### Production Build
 
 ```bash
-npm run build     # Output to dist/
+yarn build        # Output to dist/
 ```
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Start Parcel dev server on localhost:1234 |
-| `npm run build` | Production build → `dist/` |
-| `npm run clean` | Remove `dist/` and `.parcel-cache/` |
-| `npm run lint` | Lint JS with ESLint |
-| `npm run format` | Format with Prettier |
-| `npm test` | Run Jest unit tests |
-| `npm run test:coverage` | Run tests with coverage report |
+| `yarn dev` | Start Parcel dev server on localhost:1234 |
+| `yarn build` | Production build → `dist/` |
+| `yarn clean` | Remove `dist/` and `.parcel-cache/` |
+| `yarn lint` | Lint JS with ESLint |
+| `yarn format` | Format with Prettier |
+| `yarn test` | Run Jest unit tests |
+| `yarn test:coverage` | Run tests with coverage report |
 
 ## Tech Stack
 
@@ -122,20 +122,20 @@ FizzBuzz/
 ## Deploy to Netlify
 
 ```bash
-npm install -g netlify-cli
-netlify login
-netlify init
-netlify deploy --prod
+yarn dlx netlify-cli@latest login
+yarn dlx netlify-cli@latest init
+yarn dlx netlify-cli@latest deploy --prod
 ```
 
 Or connect the GitHub repository in the Netlify dashboard. The `netlify.toml` already sets:
 
 ```toml
 [build]
-  command = "npm run build"
+  command = "yarn build"
   publish = "dist"
   [build.environment]
     NODE_VERSION = "24.14.1"
+    YARN_VERSION = "4.13.0"
 ```
 
 ## SunsetHills Component Adoption
@@ -152,7 +152,7 @@ This project modernises the original FizzBuzz stack to match the patterns used i
 | Parcel bundler | ✅ | Same config approach |
 | ESLint + Prettier | ✅ | Same rule sets |
 | Jest unit tests | ✅ | Adapted for FizzBuzz modules |
-| netlify.toml | ✅ | Adapted (npm instead of yarn) |
+| netlify.toml | ✅ | Adapted for Yarn build commands |
 | Chart.js / drag plugin | ❌ | Not relevant to FizzBuzz |
 | chartjs-plugin-dragdata | ❌ | Not relevant to FizzBuzz |
 | Statistics module | ❌ | Inline stats in resultsDisplay |
