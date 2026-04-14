@@ -74,7 +74,7 @@ npm run build     # Output to dist/
 
 ### Deployment
 - **Netlify** — Hosting with CDN (`netlify.toml` included)
-- **Node.js 22.20.0** — Build environment
+- **Node.js 24.14.1** — Build environment
 
 ## Project Structure
 
@@ -135,7 +135,7 @@ Or connect the GitHub repository in the Netlify dashboard. The `netlify.toml` al
   command = "npm run build"
   publish = "dist"
   [build.environment]
-    NODE_VERSION = "22.20.0"
+    NODE_VERSION = "24.14.1"
 ```
 
 ## SunsetHills Component Adoption
@@ -172,4 +172,3 @@ This project modernises the original FizzBuzz stack to match the patterns used i
 ## License
 
 MIT License — see [LICENSE](LICENSE) for details.
-
