@@ -1,7 +1,5 @@
 # FizzBuzz
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/placeholder/deploy-status)](https://app.netlify.com/sites/your-site/deploys)
-
 > Interactive FizzBuzz coding challenge — configurable divisors, color-coded output, and multi-language code display.
 
 ## About
