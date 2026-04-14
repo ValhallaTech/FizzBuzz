@@ -3,7 +3,7 @@
 
 [build]
   # Build command - runs Parcel to bundle the project
-  command = "npm run build"
+  command = "yarn build"
 
   # Publish directory - where Parcel outputs the bundled files
   publish = "dist"
@@ -14,6 +14,7 @@
   # Node.js version to use (exact version for consistency)
   [build.environment]
     NODE_VERSION = "24.14.1"
+    YARN_VERSION = "4.13.0"
 
 # NO REDIRECTS NEEDED - This is a Multi-Page App (MPA), not an SPA
 # Each HTML file is served as-is
