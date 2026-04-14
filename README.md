@@ -24,7 +24,7 @@ This project extends the classic by letting you configure both divisors and the 
 
 ### Prerequisites
 
-- [Node.js 22.20.0 LTS](https://nodejs.org/) (`.nvmrc` provided for nvm users)
+- [Node.js 24.14.1 LTS](https://nodejs.org/) (`.nvmrc` provided for nvm users)
 
 ### Installation
 
@@ -110,7 +110,7 @@ FizzBuzz/
 ├── dist/                       # Production build (git-ignored)
 ├── netlify.toml                # Netlify configuration
 ├── package.json                # Dependencies and scripts
-├── .nvmrc                      # Node version (22.20.0)
+├── .nvmrc                      # Node version (24.14.1)
 ├── eslint.config.mjs           # ESLint flat configuration
 ├── .prettierrc                 # Prettier configuration
 ├── babel.config.json           # Babel (for Jest)
