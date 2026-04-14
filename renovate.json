@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "schedule": ["every day"],
+  "dependencyDashboard": true,
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "groupName": "all dependencies",
+      "autoMerge": true,
+      "autoMergeType": "pr"
+    }
+  ],
+  "enabledManagers": ["npm"],
+  "rangeStrategy": "update-lockfile",
+  "packageManager": true
+}
