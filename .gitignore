@@ -351,3 +351,12 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Node.js / Web build outputs
+dist/
+.parcel-cache/
+coverage/
+
+# Environment files
+.env
+.env.local

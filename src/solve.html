@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive FizzBuzz solver — configure divisors and range, then see the full color-coded sequence instantly">
+    <meta name="author" content="ValhallaTech">
+    <title>FizzBuzz | Solve</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                <span>FizzBuzz</span>
+            </a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa-solid fa-house" aria-hidden="true"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="solve.html">
+                            <i class="fa-solid fa-play" aria-hidden="true"></i> Solve
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="code.html">
+                            <i class="fa-solid fa-code" aria-hidden="true"></i> Code
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="https://github.com/ValhallaTech/FizzBuzz"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+                            <span class="visually-hidden">(opens in new window)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle"
+                                class="btn btn-sm btn-outline-light ms-2"
+                                aria-label="Toggle dark mode"
+                                aria-pressed="false"
+                                title="Switch to dark mode">
+                            <i class="fa-solid fa-moon" id="theme-icon" aria-hidden="true"></i>
+                            <span class="visually-hidden">Toggle dark mode</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <section class="solver-section py-5">
+            <div class="container">
+
+                <!-- Page heading -->
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h1 class="display-5 mb-2">Interactive Solver</h1>
+                        <p class="lead text-muted">
+                            Adjust the divisors and range, then generate the sequence
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="row mt-4">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="controls-card rounded shadow-sm p-4">
+                            <h2 class="h5 mb-4">
+                                <i class="fa-solid fa-sliders text-primary" aria-hidden="true"></i>
+                                Configuration
+                            </h2>
+
+                            <div class="row g-3">
+                                <!-- Fizz divisor -->
+                                <div class="col-md-4">
+                                    <label for="fizzInput" class="form-label fw-bold">
+                                        <span class="badge fizz-badge me-1">Fizz</span>
+                                        Fizz Divisor
+                                    </label>
+                                    <input type="number"
+                                           id="fizzInput"
+                                           class="form-control"
+                                           value="3"
+                                           min="2"
+                                           max="100"
+                                           aria-describedby="fizzHelp"
+                                           aria-label="Fizz divisor">
+                                    <div id="fizzHelp" class="form-text">2 – 100</div>
+                                </div>
+
+                                <!-- Buzz divisor -->
+                                <div class="col-md-4">
+                                    <label for="buzzInput" class="form-label fw-bold">
+                                        <span class="badge buzz-badge me-1">Buzz</span>
+                                        Buzz Divisor
+                                    </label>
+                                    <input type="number"
+                                           id="buzzInput"
+                                           class="form-control"
+                                           value="5"
+                                           min="2"
+                                           max="100"
+                                           aria-describedby="buzzHelp"
+                                           aria-label="Buzz divisor">
+                                    <div id="buzzHelp" class="form-text">2 – 100</div>
+                                </div>
+
+                                <!-- Range -->
+                                <div class="col-md-4">
+                                    <label for="limitInput" class="form-label fw-bold">
+                                        <i class="fa-solid fa-arrow-up-1-9 text-secondary me-1" aria-hidden="true"></i>
+                                        Count To
+                                    </label>
+                                    <input type="number"
+                                           id="limitInput"
+                                           class="form-control"
+                                           value="100"
+                                           min="1"
+                                           max="1000"
+                                           aria-describedby="limitHelp"
+                                           aria-label="Upper range limit">
+                                    <div id="limitHelp" class="form-text">1 – 1000</div>
+                                </div>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="mt-4 d-flex flex-wrap gap-2">
+                                <button id="generateBtn"
+                                        class="btn btn-primary"
+                                        aria-label="Generate FizzBuzz sequence">
+                                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                                    Generate
+                                </button>
+                                <button id="resetBtn"
+                                        class="btn btn-secondary"
+                                        aria-label="Reset to default values">
+                                    <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+                                    Reset Defaults
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legend -->
+                <div class="row mt-3">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="legend-bar d-flex flex-wrap gap-3 align-items-center px-3 py-2 rounded">
+                            <span class="small fw-bold text-muted">Legend:</span>
+                            <span><span class="badge fizz-badge">Fizz</span> divisible by Fizz</span>
+                            <span><span class="badge buzz-badge">Buzz</span> divisible by Buzz</span>
+                            <span><span class="badge fizzbuzz-badge">FizzBuzz</span> divisible by both</span>
+                            <span><span class="badge number-badge">7</span> plain number</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics bar -->
+                <div class="row mt-3">
+                    <div class="col-lg-8 mx-auto">
+                        <div id="statsDisplay"
+                             class="stats-bar rounded px-3 py-2"
+                             role="region"
+                             aria-live="polite"
+                             aria-label="Sequence statistics">
+                            <!-- Populated by solve.js -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="row mt-4">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="results-wrapper rounded shadow-sm p-4"
+                             role="region"
+                             aria-live="polite"
+                             aria-atomic="true"
+                             aria-label="FizzBuzz sequence output">
+                            <h2 class="h5 mb-3">
+                                <i class="fa-solid fa-list-ol text-primary" aria-hidden="true"></i>
+                                Sequence
+                            </h2>
+                            <div id="resultsOutput" class="results-grid">
+                                <p class="text-muted">
+                                    Press <strong>Generate</strong> to see the sequence&hellip;
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How-to -->
+                <div class="row mt-4">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="alert alert-info" role="region" aria-labelledby="howto-heading">
+                            <h3 id="howto-heading" class="h6 alert-heading">
+                                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                                How to use:
+                            </h3>
+                            <ul class="mb-0 small">
+                                <li>Change <strong>Fizz Divisor</strong> and <strong>Buzz Divisor</strong> to any integers between 2 and 100.</li>
+                                <li>Change <strong>Count To</strong> to set the upper bound of the sequence (max 1000).</li>
+                                <li>Click <strong>Generate</strong> (or press <kbd>Enter</kbd>) to produce the sequence.</li>
+                                <li>Click <strong>Reset Defaults</strong> to restore Fizz&nbsp;=&nbsp;3, Buzz&nbsp;=&nbsp;5, Count To&nbsp;=&nbsp;100.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 ValhallaTech. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://github.com/ValhallaTech/FizzBuzz"
+                       class="text-white me-3"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span class="visually-hidden">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Entry Point -->
+    <script type="module" src="./js/solve.js"></script>
+</body>
+</html>

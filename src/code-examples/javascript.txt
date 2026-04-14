@@ -1,0 +1,31 @@
+/**
+ * FizzBuzz - JavaScript
+ *
+ * Time Complexity:  O(n) - single pass from 1 to limit
+ * Space Complexity: O(n) - result array of n items
+ */
+
+function fizzBuzz(fizz = 3, buzz = 5, limit = 100) {
+  const results = [];
+
+  for (let i = 1; i <= limit; i++) {
+    const isFizz = i % fizz === 0;
+    const isBuzz = i % buzz === 0;
+
+    if (isFizz && isBuzz) {
+      results.push('FizzBuzz');
+    } else if (isFizz) {
+      results.push('Fizz');
+    } else if (isBuzz) {
+      results.push('Buzz');
+    } else {
+      results.push(String(i));
+    }
+  }
+
+  return results;
+}
+
+// Run with classic defaults (3, 5, 1–100)
+const sequence = fizzBuzz();
+console.log(sequence.join(', '));

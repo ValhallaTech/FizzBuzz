@@ -1,0 +1,47 @@
+// FizzBuzz - C#
+//
+// Time Complexity:  O(n) - single pass from 1 to limit
+// Space Complexity: O(n) - result list of n items
+
+using System;
+using System.Collections.Generic;
+
+public class FizzBuzz
+{
+    public static List<string> Solve(int fizz, int buzz, int limit)
+    {
+        var results = new List<string>();
+
+        for (int i = 1; i <= limit; i++)
+        {
+            bool isFizz = i % fizz == 0;
+            bool isBuzz = i % buzz == 0;
+
+            if (isFizz && isBuzz)
+            {
+                results.Add("FizzBuzz");
+            }
+            else if (isFizz)
+            {
+                results.Add("Fizz");
+            }
+            else if (isBuzz)
+            {
+                results.Add("Buzz");
+            }
+            else
+            {
+                results.Add(i.ToString());
+            }
+        }
+
+        return results;
+    }
+
+    static void Main()
+    {
+        // Run with classic defaults (3, 5, 1–100)
+        var sequence = Solve(3, 5, 100);
+        Console.WriteLine(string.Join(", ", sequence));
+    }
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FizzBuzz algorithm source code with syntax highlighting in JavaScript, Python, Java, and C#">
+    <meta name="author" content="ValhallaTech">
+    <title>FizzBuzz | Code</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                <span>FizzBuzz</span>
+            </a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa-solid fa-house" aria-hidden="true"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="solve.html">
+                            <i class="fa-solid fa-play" aria-hidden="true"></i> Solve
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="code.html">
+                            <i class="fa-solid fa-code" aria-hidden="true"></i> Code
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           href="https://github.com/ValhallaTech/FizzBuzz"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+                            <span class="visually-hidden">(opens in new window)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="theme-toggle"
+                                class="btn btn-sm btn-outline-light ms-2"
+                                aria-label="Toggle dark mode"
+                                aria-pressed="false"
+                                title="Switch to dark mode">
+                            <i class="fa-solid fa-moon" id="theme-icon" aria-hidden="true"></i>
+                            <span class="visually-hidden">Toggle dark mode</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <section class="code-section py-5">
+            <div class="container">
+
+                <!-- Page heading -->
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-4">
+                        <h1 class="display-5">The Algorithm</h1>
+                        <p class="lead text-muted">
+                            Explore the FizzBuzz solution with detailed code explanation
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Algorithm Explanation -->
+                <div class="row mt-4">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="explanation-card bg-body-secondary rounded p-4 mb-4">
+                            <h2 class="h4 mb-3">
+                                <i class="fa-solid fa-lightbulb text-warning" aria-hidden="true"></i>
+                                Algorithm Approach
+                            </h2>
+                            <p>
+                                Iterate from <strong>1 to N</strong>. For each integer, check divisibility by
+                                the Fizz divisor, the Buzz divisor, and both. Assign the appropriate label —
+                                <em>Fizz</em>, <em>Buzz</em>, <em>FizzBuzz</em>, or the number itself — and
+                                collect the results.
+                            </p>
+
+                            <h3 class="h5 mt-4 mb-3">
+                                <i class="fa-solid fa-chart-line text-info" aria-hidden="true"></i>
+                                Complexity Analysis
+                            </h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="complexity-badge bg-body p-3 rounded mb-3">
+                                        <strong>Time Complexity:</strong><br>
+                                        <span class="badge bg-success">O(n)</span>
+                                        <small class="d-block text-muted mt-1">Single pass through 1..N</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="complexity-badge bg-body p-3 rounded mb-3">
+                                        <strong>Space Complexity:</strong><br>
+                                        <span class="badge bg-primary">O(n)</span>
+                                        <small class="d-block text-muted mt-1">Result array of N items</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h3 class="h5 mt-4 mb-3">
+                                <i class="fa-solid fa-list-ol text-primary" aria-hidden="true"></i>
+                                Step-by-Step Process
+                            </h3>
+                            <ol class="mb-0">
+                                <li class="mb-2">Loop <strong>i</strong> from 1 to N (inclusive)</li>
+                                <li class="mb-2">Check <code>i % fizz === 0</code> and <code>i % buzz === 0</code></li>
+                                <li class="mb-2">If <strong>both</strong> are true → push <em>"FizzBuzz"</em></li>
+                                <li class="mb-2">Else if only Fizz → push <em>"Fizz"</em></li>
+                                <li class="mb-2">Else if only Buzz → push <em>"Buzz"</em></li>
+                                <li class="mb-2">Otherwise → push the number as a string</li>
+                            </ol>
+                        </div>
+
+                        <!-- Language Tabs -->
+                        <div class="language-tabs mb-3" role="tablist" aria-label="Code language selection">
+                            <button class="lang-tab active"
+                                    data-language="javascript"
+                                    role="tab"
+                                    aria-selected="true"
+                                    aria-controls="codeDisplay">
+                                <i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript
+                            </button>
+                            <button class="lang-tab"
+                                    data-language="python"
+                                    role="tab"
+                                    aria-selected="false"
+                                    aria-controls="codeDisplay">
+                                <i class="fa-brands fa-python" aria-hidden="true"></i> Python
+                            </button>
+                            <button class="lang-tab"
+                                    data-language="java"
+                                    role="tab"
+                                    aria-selected="false"
+                                    aria-controls="codeDisplay">
+                                <i class="fa-brands fa-java" aria-hidden="true"></i> Java
+                            </button>
+                            <button class="lang-tab"
+                                    data-language="csharp"
+                                    role="tab"
+                                    aria-selected="false"
+                                    aria-controls="codeDisplay">
+                                <i class="fa-solid fa-code" aria-hidden="true"></i> C#
+                            </button>
+                        </div>
+
+                        <!-- Code Display -->
+                        <div class="code-card bg-body rounded shadow-sm p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h2 class="h5 mb-0">
+                                    <i class="fa-solid fa-file-code" aria-hidden="true"></i>
+                                    Implementation
+                                </h2>
+                                <button id="copyCodeBtn"
+                                        class="btn btn-sm btn-outline-secondary"
+                                        aria-label="Copy code to clipboard">
+                                    <i class="fa-solid fa-copy" aria-hidden="true"></i>
+                                    Copy
+                                </button>
+                            </div>
+
+                            <div id="codeDisplay"
+                                 class="code-container"
+                                 role="region"
+                                 aria-label="Source code with syntax highlighting">
+                                <!-- Populated by codeDisplay.js -->
+                            </div>
+                        </div>
+
+                        <!-- Example Walkthrough -->
+                        <div class="example-card bg-body-secondary rounded p-4 mt-4">
+                            <h2 class="h5 mb-3">
+                                <i class="fa-solid fa-person-walking" aria-hidden="true"></i>
+                                Example Walkthrough (Fizz&nbsp;=&nbsp;3, Buzz&nbsp;=&nbsp;5, N&nbsp;=&nbsp;15)
+                            </h2>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">i</th>
+                                            <th scope="col">i % 3</th>
+                                            <th scope="col">i % 5</th>
+                                            <th scope="col">Output</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>1</td><td>1</td><td>1</td><td><span class="badge number-badge">1</span></td></tr>
+                                        <tr><td>2</td><td>2</td><td>2</td><td><span class="badge number-badge">2</span></td></tr>
+                                        <tr class="table-primary"><td>3</td><td><strong>0</strong></td><td>3</td><td><span class="badge fizz-badge">Fizz</span></td></tr>
+                                        <tr><td>4</td><td>1</td><td>4</td><td><span class="badge number-badge">4</span></td></tr>
+                                        <tr class="table-success"><td>5</td><td>2</td><td><strong>0</strong></td><td><span class="badge buzz-badge">Buzz</span></td></tr>
+                                        <tr class="table-primary"><td>6</td><td><strong>0</strong></td><td>1</td><td><span class="badge fizz-badge">Fizz</span></td></tr>
+                                        <tr><td>7</td><td>1</td><td>2</td><td><span class="badge number-badge">7</span></td></tr>
+                                        <tr><td>8</td><td>2</td><td>3</td><td><span class="badge number-badge">8</span></td></tr>
+                                        <tr class="table-primary"><td>9</td><td><strong>0</strong></td><td>4</td><td><span class="badge fizz-badge">Fizz</span></td></tr>
+                                        <tr class="table-success"><td>10</td><td>1</td><td><strong>0</strong></td><td><span class="badge buzz-badge">Buzz</span></td></tr>
+                                        <tr><td>11</td><td>2</td><td>1</td><td><span class="badge number-badge">11</span></td></tr>
+                                        <tr class="table-primary"><td>12</td><td><strong>0</strong></td><td>2</td><td><span class="badge fizz-badge">Fizz</span></td></tr>
+                                        <tr><td>13</td><td>1</td><td>3</td><td><span class="badge number-badge">13</span></td></tr>
+                                        <tr><td>14</td><td>2</td><td>4</td><td><span class="badge number-badge">14</span></td></tr>
+                                        <tr class="table-warning"><td>15</td><td><strong>0</strong></td><td><strong>0</strong></td><td><span class="badge fizzbuzz-badge">FizzBuzz</span></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Resources -->
+                        <div class="row mt-5">
+                            <div class="col-md-6 mb-3">
+                                <div class="resource-card border rounded p-4 h-100">
+                                    <h3 class="h5">
+                                        <i class="fa-solid fa-flask text-success" aria-hidden="true"></i>
+                                        Try It Yourself
+                                    </h3>
+                                    <p class="text-muted small mb-3">
+                                        Use the interactive solver to generate sequences with any divisors.
+                                    </p>
+                                    <a href="solve.html" class="btn btn-sm btn-primary">
+                                        Go to Solver
+                                        <i class="fa-solid fa-arrow-right ms-1" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="resource-card border rounded p-4 h-100">
+                                    <h3 class="h5">
+                                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                        Source Code
+                                    </h3>
+                                    <p class="text-muted small mb-3">
+                                        Browse the full repository on GitHub.
+                                    </p>
+                                    <a href="https://github.com/ValhallaTech/FizzBuzz"
+                                       class="btn btn-sm btn-outline-secondary"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        View on GitHub
+                                        <i class="fa-solid fa-arrow-up-right-from-square ms-1" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 ValhallaTech. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://github.com/ValhallaTech/FizzBuzz"
+                       class="text-white me-3"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span class="visually-hidden">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Entry Point -->
+    <script type="module" src="./js/code.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+// FizzBuzz - Java
+//
+// Time Complexity:  O(n) - single pass from 1 to limit
+// Space Complexity: O(n) - result list of n items
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class FizzBuzz {
+
+    public static List<String> solve(int fizz, int buzz, int limit) {
+        List<String> results = new ArrayList<>();
+
+        for (int i = 1; i <= limit; i++) {
+            boolean isFizz = i % fizz == 0;
+            boolean isBuzz = i % buzz == 0;
+
+            if (isFizz && isBuzz) {
+                results.add("FizzBuzz");
+            } else if (isFizz) {
+                results.add("Fizz");
+            } else if (isBuzz) {
+                results.add("Buzz");
+            } else {
+                results.add(String.valueOf(i));
+            }
+        }
+
+        return results;
+    }
+
+    public static void main(String[] args) {
+        // Run with classic defaults (3, 5, 1–100)
+        List<String> sequence = solve(3, 5, 100);
+        System.out.println(String.join(", ", sequence));
+    }
+}
