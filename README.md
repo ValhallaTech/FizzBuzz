@@ -117,8 +117,6 @@ FizzBuzz/
 └── jest.config.json            # Jest configuration
 ```
 
-> **Note on legacy files:** The repository also contains the original ASP.NET WebForms project (`FizzBuzz.sln`, `FizzBuzz.csproj`, `Web.config`, and root-level `index.html`/`Solve.html`/`Code.html`). These are preserved for reference. The authoritative source is the `src/` directory — all development, building, and deployment work should be performed there.
-
 ## Deploy to Netlify
 
 ```bash
