@@ -11,6 +11,6 @@
       "matchPackageNames": ["*"]
     }
   ],
-  "enabledManagers": ["npm"],
+  "enabledManagers": ["npm", "github-actions"],
   "rangeStrategy": "update-lockfile"
 }
